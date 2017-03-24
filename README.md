@@ -1,5 +1,9 @@
-# replace-line-break package
-Replace LineBreak.
+replace-line-break
+======
+
+[![CircleCI](https://circleci.com/gh/mochi8k/replace-line-break.svg?style=shield)](https://circleci.com/gh/mochi8k/replace-line-break)
+
+Replace line break to empty string
 
 ## Installation
 Atom Package: https://atom.io/packages/replace-line-break
