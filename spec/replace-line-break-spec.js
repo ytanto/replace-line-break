@@ -23,7 +23,7 @@ describe('ReplaceLineBreak', () => {
     it('replace line break to empty string', () => {
       editor.setText('line1\nline2\rline3\r\nline4\n\rline5\\nline6\\rline7');
       atom.commands.dispatch(editorElement, 'replace-line-break:replace');
-      expect(editor.getText()).toEqual('line1line2\rline3line4\rline5line6\\rline7');
+      expect(editor.getText()).toEqual('line1line2\rline3line4\rline5\\nline6\\rline7');
     });
   });
 
