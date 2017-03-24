@@ -1,3 +1,10 @@
+dependencies:
+  override:
+    - curl -L https://atom.io/download/deb -o atom-amd64.deb
+    - sudo dpkg --install atom-amd64.deb || true
+    - atom -v
+    - apm -v
+    
 test:
   override:
     - npm test
