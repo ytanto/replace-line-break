@@ -1,13 +1,16 @@
 {
   "name": "replace-line-break",
   "main": "./lib/replace-line-break",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "1.0.0",
+  "description": "Replace line break to empty string",
   "keywords": [],
   "repository": "https://github.com/atom/replace-line-break",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "test": "apm test"
+  }
 }
