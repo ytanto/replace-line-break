@@ -1,0 +1,21 @@
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Replace LineBreak'
+      'command': 'replace-line-break:replace'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Replace LineBreak'
+      'submenu': [
+        {
+          'label': 'replace'
+          'command': 'replace-line-break:replace'
+        }
+      ]
+    ]
+  }
+]

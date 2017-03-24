@@ -1,0 +1,2 @@
+'atom-text-editor':
+  'ctrl-alt-n': 'replace-line-break:replace'
