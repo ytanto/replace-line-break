@@ -1,73 +1,30 @@
-// 'use babel';
-//
-// import ReplaceLineBreak from '../lib/replace-line-break';
-//
-// // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
-// //
-// // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
-// // or `fdescribe`). Remove the `f` to unfocus the block.
-//
-// describe('ReplaceLineBreak', () => {
-//   let workspaceElement, activationPromise;
-//
-//   beforeEach(() => {
-//     workspaceElement = atom.views.getView(atom.workspace);
-//     activationPromise = atom.packages.activatePackage('replace-line-break');
-//   });
-//
-//   describe('when the replace-line-break:toggle event is triggered', () => {
-//     it('hides and shows the modal panel', () => {
-//       // Before the activation event the view is not on the DOM, and no panel
-//       // has been created
-//       expect(workspaceElement.querySelector('.replace-line-break')).not.toExist();
-//
-//       // This is an activation event, triggering it will cause the package to be
-//       // activated.
-//       atom.commands.dispatch(workspaceElement, 'replace-line-break:toggle');
-//
-//       waitsForPromise(() => {
-//         return activationPromise;
-//       });
-//
-//       runs(() => {
-//         expect(workspaceElement.querySelector('.replace-line-break')).toExist();
-//
-//         let replaceLineBreakElement = workspaceElement.querySelector('.replace-line-break');
-//         expect(replaceLineBreakElement).toExist();
-//
-//         let replaceLineBreakPanel = atom.workspace.panelForItem(replaceLineBreakElement);
-//         expect(replaceLineBreakPanel.isVisible()).toBe(true);
-//         atom.commands.dispatch(workspaceElement, 'replace-line-break:toggle');
-//         expect(replaceLineBreakPanel.isVisible()).toBe(false);
-//       });
-//     });
-//
-//     it('hides and shows the view', () => {
-//       // This test shows you an integration test testing at the view level.
-//
-//       // Attaching the workspaceElement to the DOM is required to allow the
-//       // `toBeVisible()` matchers to work. Anything testing visibility or focus
-//       // requires that the workspaceElement is on the DOM. Tests that attach the
-//       // workspaceElement to the DOM are generally slower than those off DOM.
-//       jasmine.attachToDOM(workspaceElement);
-//
-//       expect(workspaceElement.querySelector('.replace-line-break')).not.toExist();
-//
-//       // This is an activation event, triggering it causes the package to be
-//       // activated.
-//       atom.commands.dispatch(workspaceElement, 'replace-line-break:toggle');
-//
-//       waitsForPromise(() => {
-//         return activationPromise;
-//       });
-//
-//       runs(() => {
-//         // Now we can test for view visibility
-//         let replaceLineBreakElement = workspaceElement.querySelector('.replace-line-break');
-//         expect(replaceLineBreakElement).toBeVisible();
-//         atom.commands.dispatch(workspaceElement, 'replace-line-break:toggle');
-//         expect(replaceLineBreakElement).not.toBeVisible();
-//       });
-//     });
-//   });
-// });
+'use babel';
+
+describe('ReplaceLineBreak', () => {
+
+  let editor, editorElement;
+
+  beforeEach(() => {
+    waitsForPromise(() => atom.workspace.open());
+
+    waitsForPromise(() => atom.packages.activatePackage('replace-line-break'));
+
+    runs(() => {
+      editor = atom.workspace.getActiveTextEditor();
+      editorElement = atom.views.getView(editor);
+    });
+  });
+
+  afterEach(() => {
+    atom.packages.disablePackage('replace-line-break');
+  });
+
+  describe('when the replace-line-break:replace event is triggered', () => {
+    it('replace line break to empty string', () => {
+      editor.setText('line1\nline2\rline3\r\nline4\n\rline5\\nline6\\rline7');
+      atom.commands.dispatch(editorElement, 'replace-line-break:replace');
+      expect(editor.getText()).toEqual('line1line2\rline3line4\rline5line6\\rline7');
+    });
+  });
+
+});
