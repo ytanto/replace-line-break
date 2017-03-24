@@ -5,6 +5,10 @@ replace-line-break
 
 Replace line break to empty string
 
+`ctrl-alt-n`: replace-line-break:replace
+
+![preview](./replace-line-break.gif)
+
 ## Installation
 Atom Package: https://atom.io/packages/replace-line-break
 ```
