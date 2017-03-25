@@ -7,7 +7,7 @@ Replace line break to empty string
 
 `ctrl-alt-n` replace-line-break:replace
 
-![preview](./replace-line-break.gif)
+![Demo](https://github.com/mochi8k/replace-line-break/blob/master/replace-line-break.gif?raw=true)
 
 ## Installation
 Atom Package: https://atom.io/packages/replace-line-break
