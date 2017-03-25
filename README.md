@@ -2,6 +2,9 @@ replace-line-break
 ======
 
 [![CircleCI](https://circleci.com/gh/mochi8k/replace-line-break.svg?style=shield)](https://circleci.com/gh/mochi8k/replace-line-break)
+[![apm](https://img.shields.io/apm/dm/replace-line-break.svg)](https://github.com/mochi8k/replace-line-break)
+[![apm](https://img.shields.io/apm/v/replace-line-break.svg)](https://github.com/mochi8k/replace-line-break)
+[![apm](https://img.shields.io/apm/l/replace-line-break.svg)](https://github.com/mochi8k/replace-line-break)
 
 Replace line break to empty string
 
