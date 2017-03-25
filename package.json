@@ -7,7 +7,7 @@
     "replace",
     "linebreak"
   ],
-  "repository": "https://github.com/atom/replace-line-break",
+  "repository": "https://github.com/mochi8k/replace-line-break",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
