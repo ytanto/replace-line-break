@@ -1,7 +1,7 @@
 {
   "name": "replace-line-break",
   "main": "./lib/replace-line-break",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Replace line break to empty string",
   "keywords": [
     "replace",
