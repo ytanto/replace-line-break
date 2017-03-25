@@ -3,7 +3,10 @@
   "main": "./lib/replace-line-break",
   "version": "1.0.0",
   "description": "Replace line break to empty string",
-  "keywords": [],
+  "keywords": [
+    "replace",
+    "linebreak"
+  ],
   "repository": "https://github.com/atom/replace-line-break",
   "license": "MIT",
   "engines": {
